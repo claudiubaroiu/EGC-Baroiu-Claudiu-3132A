@@ -59,3 +59,21 @@ d)Impactul asupra performanței:
 
 --Iluminare activată: Calculul iluminării poate avea un impact semnificativ asupra performanței, deoarece implică calcule complexe pentru fiecare pixel.
 --Iluminare dezactivată: Fără iluminare, performanța poate fi îmbunătățită, deoarece se evită calculul costisitor al iluminării.
+
+
+LABORATOR 11
+1)Comenzile GL.Push() și GL.Pop() sunt folosite pentru a manipula stiva matricilor în OpenGL și sunt adesea utilizate împreună pentru a izola modificările matricelor într-o anumită porțiune de cod. Rolul lor principal este de a salva și de a restaura starea matricei curente.Este necesară utilizarea GL.Push() atunci când se dorește păstrarea stării actuale a matricei (cum ar fi modelview sau proiecție) într-un anumit punct al codului. Acest lucru este util atunci când se efectuează transformări specifice într-o porțiune de cod și se dorește revenirea la starea anterioară după finalizarea acestora.Utilizarea GL.Pop() este necesară pentru a reveni la starea matricei anterioare salvată. Fără aceasta, modificările efectuate asupra matricelor într-o anumită porțiune de cod ar afecta întreaga aplicație sau scenă, ceea ce poate duce la rezultate nedorite.
+
+2)Metodele GL.Rotate(), GL.Translate() și GL.Scale() sunt folosite pentru a efectua transformări asupra matricelor în OpenGL, influențând astfel modul în care obiectele sunt afișate pe ecran.
+a)GL.Rotate():
+          // Rotirea unui obiect cu un unghi dat în jurul axei Y
+          GL.Rotate(45.0, 0.0, 1.0, 0.0);
+b)GL.Translate():
+           // Translatarea unui obiect la dreapta pe axa X și în sus pe axa Y
+           GL.Translate(2.0, 1.0, 0.0);
+c)GL.Scale():
+           // Scalarea unui obiect cu un factor de 2 pe axa X și de 0.5 pe axa Y
+           GL.Scale(2.0, 0.5, 1.0);
+
+3)Numărul de niveluri de manipulări ierarhice (folosind GL.Push() și GL.Pop()) pe care o scenă OpenGL le suportă este determinat de stiva de matrici OpenGL. Această stivă este folosită pentru a gestiona transformările și alte proprietăți ale matricilor în OpenGL.
+Stiva OpenGL poate să aibă o limită maximă de niveluri, iar această limită poate varia în funcție de implementarea OpenGL și de specificațiile hardware. În practică, majoritatea implementărilor OpenGL moderne permit un număr semnificativ de niveluri de manipulări ierarhice. În general, este suficient pentru majoritatea scenelor 3D obișnuite.
